@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Photosets.php - get a list of photosets that belong to this user
  *
  * copyright: 2013 jalal @ gnomedia
  * license: MIT License, see LICENSE file
@@ -9,6 +9,10 @@
 namespace WQFlickr;
 
 require_once 'WQFlickr/Photoset.php';
+
+function sortByDate($a, $b) {
+  return $a['created'] < $b['created'];
+}
 
 class Photosets extends Api
 {
@@ -48,6 +52,12 @@ class Photosets extends Api
     }
     // print_r($photos);
     return $photoset;
+  }
+
+  public function getLatest($count=1)
+  {
+    $res = usort($this->sets, "WQFlickr\sortByDate");
+    return new Photoset($this->sets[0]['id']);
   }
 
   public function load()
