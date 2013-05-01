@@ -57,7 +57,13 @@ class Photosets extends Api
   public function getLatest($count=1)
   {
     $res = usort($this->sets, "WQFlickr\sortByDate");
-    return new Photoset($this->sets[0]['id']);
+    $set = new Photoset($this->sets[0]['id']);
+    $set->setTitle($this->sets[0]['title']);
+    $set->setDescription($this->sets[0]['description']);
+    $set->setCount($this->sets[0]['count']);
+    $set->setCreated($this->sets[0]['created']);
+    // die(print_r($this->sets[0]));
+    return $set;
   }
 
   public function load()
