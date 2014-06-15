@@ -12,7 +12,7 @@ require_once('WQFlickr/Curl.php');
 
 class Api
 {
-  const REST_ENDPOINT = "http://api.flickr.com/services/rest/";
+  const REST_ENDPOINT = "https://api.flickr.com/services/rest/";
 
   private static $key;
   private static $secret;
