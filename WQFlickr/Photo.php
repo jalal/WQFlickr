@@ -23,7 +23,7 @@ class Photo
   private $farm;
   private $title;
   private $isprimary;
-  private $basic_url = 'http://farm%d.staticflickr.com/%s/%s_%s_%s.jpg';
+  private $basic_url = 'https://farm%d.staticflickr.com/%s/%s_%s_%s.jpg';
 
   /**
    * [__construct description]

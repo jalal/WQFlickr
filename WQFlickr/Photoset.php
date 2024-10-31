@@ -153,4 +153,18 @@ class Photoset extends Api
       return $this;
   }
 
+  /**
+   * [getPhoto description]
+   *
+   * @param  [type] $idx [description]
+   * @return [type]      [description]
+   */
+  public function getPhoto($idx)
+  {
+      if (count($this->photos) > 0) {
+          return $this->photos[$idx];
+      }
+      return false;
+  }
+
 }
